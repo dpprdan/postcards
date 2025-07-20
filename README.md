@@ -250,6 +250,8 @@ B.F.A. in Music Performance | August 2005 - May 2009
 
 ## Troubleshooting
 
+### Pandoc
+
 Most issues that people have using this package are related their installation
 Pandoc, software that R Markdown relies on.
 Currently Postcards works best with Pandoc version 2.8 or greater, although we
@@ -274,6 +276,21 @@ to use RStudio and
 [install the latest preview release of RStudio](https://www.rstudio.com/products/rstudio/download/preview/).
 If you are still encountering error messages after trying the above please open
 an issue.
+
+### Positron
+
+If you're using the RStudio keybindings in Positron, the Cmd-Shift-K shortcut will issue the `quarto preview` terminal command instead of `rmarkdown::render()` in the R console, and the `index.html` will not be rendered properly with images, links, etc. There are two workarounds to this. 
+
+1. Insert the chunk below into your `index.Rmd` and run the line to render with rmarkdown instead of quarto.
+    ````
+    ```{r, eval=FALSE, include=FALSE}
+    rmarkdown::render("index.Rmd")
+    ```
+    ````
+3. Use the "Render Document With R Markdown" button in the preview dropdown menu in Quarto.  
+
+<img width="340" height="111" alt="image" src="https://github.com/user-attachments/assets/255ff302-1b9e-435e-bac4-0254eeccb48c" />
+
 
 ## Code of Conduct
 
